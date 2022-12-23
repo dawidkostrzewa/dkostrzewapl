@@ -1,6 +1,7 @@
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import '../styles/globals.css';
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     </main>
                     <Footer />
                 </div>
+                <GoogleAnalytics trackPageViews />
             </body>
         </html>
     );
