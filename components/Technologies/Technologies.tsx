@@ -13,7 +13,7 @@ import { TechnologyItem } from './TechnologyItem/TechnologyItem';
 
 const Technologies = () => {
     return (
-        <div className="mr-auto ml-auto mt-32 max-w-3xl text-justify">
+        <div className="mr-auto ml-auto lg:mt-32 min-[320px]:mt-8 max-w-3xl text-justify">
             <h2 className={`text-2xl font-bold ${styles['title']}`}>Techologies</h2>
             <div className="grid gap-4 mt-6 lg:grid-cols-4 sm:grid-cols-2">
                 <TechnologyItem name="JavaScript" bgColor="#F0DB4E" icon={JSLogo} textColor="#000" />
