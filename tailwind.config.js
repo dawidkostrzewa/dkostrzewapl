@@ -4,7 +4,8 @@ module.exports = {
     content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './app/**/*.{js,ts,jsx,tsx}'],
     theme: {
         colors: {
-            black: 'rgb(29, 29, 29)'
+            black: 'rgb(29, 29, 29)',
+            white: 'rgb(255, 255, 255)',
         },
         fontFamily: {
             sans: ['"Roboto"', 'sans-serif']

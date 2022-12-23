@@ -4,14 +4,14 @@ import '../styles/globals.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html>
+        <html className='dark'>
             <head>
                 <title>Dawid Kostrzewa - Software Engineer</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
             </head>
             <body>
-                <div className="bg-white text-black dark:bg-black dark:text-white">
+                <div className="bg-white dark:bg-black dark:text-white">
                     <header>
                        <Navbar/>
                     </header>
