@@ -4,7 +4,7 @@ import styles from './Socials.module.scss'
 export const Socials = () => {
 
     return (
-    <div className="mr-auto ml-auto mt-32 min-[320px]:mt-8 max-w-3xl text-justify">
+    <div className="mr-auto ml-auto lg:mt-32 min-[320px]:mt-8 max-w-3xl text-justify">
         <h2 className={`text-2xl font-bold ${styles['title']}`}>Socials</h2>
         <div className='mt-6 flex justify-around'>
             <a href="http://twitter.com/kosDawid" target="_blank" rel="noopener noreferrer">
