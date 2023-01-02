@@ -19,7 +19,7 @@ export const Home = () => {
             </div>
             <AboutMe />
             <Technologies />
-            <Socials/>
+            <Socials />
         </>
     );
 };
