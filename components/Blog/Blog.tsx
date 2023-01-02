@@ -9,7 +9,6 @@ type BlogProps = {
 };
 
 export const Blog = ({ entries }: BlogProps) => {
-    console.log(entries[0].fields.post.content);
     return (
         <div>
             {entries.map((entry) => {
