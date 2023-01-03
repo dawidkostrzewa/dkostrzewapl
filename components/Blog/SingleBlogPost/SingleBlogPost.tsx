@@ -7,7 +7,7 @@ export const SingleBlogPost = (fields: BlogFields) => {
     return (
         <section className="w-7/12 mx-auto">
             <article>
-                <h1 className="font-bold text-5xl text-center mb-5">{`< ${fields.title} />`}</h1>
+                <h1 className="font-bold text-6xl text-center mb-5">{`< ${fields.title} />`}</h1>
                 <Image
                     alt={fields.title}
                     src={'https:' + fields.thumbnail.fields.file.url}

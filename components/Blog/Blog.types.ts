@@ -5,4 +5,5 @@ export type BlogFields = {
     slug: EntryFields.Text;
     thumbnail: Asset;
     post: EntryFields.Text;
+    excerpt: EntryFields.Text;
 };
