@@ -1,6 +1,6 @@
 import { BlogFields } from '../../../components/Blog/Blog.types';
 import { client } from '../../../contentful/client';
-import ReactMarkdown from 'react-markdown';
+import { SingleBlogPost } from '../../../components/Blog/SingleBlogPost/SingleBlogPost';
 
 const getEntry = async (slug: string) => {
     const res = await client.getEntries<BlogFields>({
@@ -15,7 +15,7 @@ export default async function SingleBlogPostPage({ params }: { params: { slug: s
     return (
         <article>
             <h1>{post.fields['title']}</h1>
-            <ReactMarkdown>{post.fields.post}</ReactMarkdown>
+            <SingleBlogPost {...post.fields} />
         </article>
     );
 }
