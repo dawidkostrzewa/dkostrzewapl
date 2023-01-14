@@ -5,9 +5,9 @@ import Script from 'next/script';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html className="dark" lang="en">
-            <body>
-                <div className="bg-white dark:bg-black dark:text-white">
+        <html className="dark h-full" lang="en">
+            <body className="min-h-full">
+                <div className="bg-white dark:bg-black dark:text-white min-h-screen">
                     <header>
                         <Navbar />
                     </header>

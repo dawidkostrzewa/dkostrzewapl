@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const BlogCard = ({ entry }: BlogCardProps) => {
     return (
-        <div className="bg-white border border-white rounded-lg max-w-2xl mx-auto mb-5">
+        <div className="bg-white border border-white rounded-lg max-w-md mx-auto md:mx-0">
             <Link href={`/blog/${entry.fields.slug}`}>
                 <Image
                     alt={entry.fields.title}
