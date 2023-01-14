@@ -15,8 +15,8 @@ export const BlogCard = ({ entry }: BlogCardProps) => {
                 />
             </Link>
             <div className="p-5">
-                <Link href={`/blog/${entry.fields.slug}`}>
-                    <h5 className="text-black font-bold text-2xl tracking-tight mb-2">{entry.fields.title}</h5>
+                <Link href={`/blog/${entry.fields.slug}`} className="mb-12">
+                    <h2 className="text-black font-bold text-2xl tracking-tight mb-2">{entry.fields.title}</h2>
                 </Link>
                 <p className="font-normal text-black mb-3">{entry.fields.excerpt}</p>
                 {/* <Link

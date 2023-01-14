@@ -2,20 +2,30 @@ import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import { BlogFields } from '../Blog.types';
 import { CodeBlock } from '../CodeBlock/CodeBlock';
+import styles from './SingleBlogPost.module.scss';
+import readingTime from 'reading-time';
+import { BsBook } from 'react-icons/bs';
 
 export const SingleBlogPost = (fields: BlogFields) => {
+    const readTime = readingTime(fields.post);
+
     return (
         <section className="w-7/12 mx-auto">
             <article>
-                <h1 className="font-bold text-6xl text-center mb-5">{`< ${fields.title} />`}</h1>
                 <Image
                     alt={fields.title}
                     src={'https:' + fields.thumbnail.fields.file.url}
-                    width={600}
-                    height={350}
-                    className="mx-auto "
+                    width={800}
+                    height={400}
+                    className="mx-auto mb-12"
                 />
-                <div className="mt-12 text-lg">
+                <h1 className={`font-bold text-5xl text-center mb-5 ${styles.title}`}>{`${fields.title}`}</h1>
+                <div>
+                    <div className="flex items-center justify-center">
+                        <BsBook size={20} /> <span className="ml-2">{readTime.text}</span>
+                    </div>
+                </div>
+                <div className="mt-12 max-w-4xl mx-auto text-lg">
                     <ReactMarkdown
                         components={{
                             code(codeProps) {
@@ -26,11 +36,14 @@ export const SingleBlogPost = (fields: BlogFields) => {
                                     <code
                                         className={codeProps.className}
                                         // TODO: proper styling for inline code
-                                        style={{ background: 'black', fontStyle: 'italic' }}
+                                        style={{ background: '#63666A', fontStyle: 'italic', padding: '3px' }}
                                         {...codeProps}>
                                         {codeProps.children}
                                     </code>
                                 );
+                            },
+                            p(pProps) {
+                                return <p className="mb-5" {...pProps} />;
                             }
                         }}>
                         {fields.post}

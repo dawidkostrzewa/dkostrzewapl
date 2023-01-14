@@ -1,6 +1,4 @@
-'use client';
-
-import { Asset, Entry, EntryFields } from 'contentful';
+import { Entry } from 'contentful';
 import { BlogFields } from './Blog.types';
 import { BlogCard } from './BlogCard/BlogCard';
 

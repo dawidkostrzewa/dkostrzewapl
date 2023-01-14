@@ -8,7 +8,7 @@ export const CodeBlock = ({ children }: CodeBlockProps) => {
     return (
         <Highlight {...defaultProps} theme={theme} code={String(children).replace(/\n$/, '')} language="typescript">
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                <pre className={className} style={style}>
+                <pre className={`${className} my-5`} style={{ ...style, backgroundColor: 'transparent' }}>
                     {tokens.map((line, i) => (
                         <div key={i} {...getLineProps({ line, key: i })}>
                             {line.map((token, key) => (
