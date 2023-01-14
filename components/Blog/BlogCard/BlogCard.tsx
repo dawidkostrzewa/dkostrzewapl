@@ -1,10 +1,20 @@
 import { BlogCardProps } from './BlogCard.types';
 import Image from 'next/image';
 import Link from 'next/link';
+import clsx from 'clsx';
 
-export const BlogCard = ({ entry }: BlogCardProps) => {
+export const BlogCard = ({ entry, isOnMainPage }: BlogCardProps) => {
     return (
-        <div className="bg-white border border-white rounded-lg max-w-md mx-auto md:mx-0">
+        <div
+            className={clsx(
+                'bg-white',
+                'border',
+                'border-white',
+                'rounded-lg',
+                { 'max-w-md': !isOnMainPage },
+                'mx-auto',
+                'md:mx-0'
+            )}>
             <Link href={`/blog/${entry.fields.slug}`}>
                 <Image
                     alt={entry.fields.title}

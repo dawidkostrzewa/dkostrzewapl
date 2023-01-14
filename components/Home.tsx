@@ -3,8 +3,11 @@ import styles from './Home.module.scss';
 import AboutMe from './AboutMe/AboutMe';
 import Technologies from './Technologies/Technologies';
 import { Socials } from './Socials/Socials';
+import { LatestsBlogPost } from './LatestsBlogPost/LatestsBlogPost';
+import { Entry } from 'contentful';
+import { BlogFields } from './Blog/Blog.types';
 
-export const Home = () => {
+export const Home = ({ latestsBlogPost }: { latestsBlogPost: Entry<BlogFields> }) => {
     return (
         <>
             <div className="flex flex-col justify-center items-center text-center">
@@ -19,6 +22,7 @@ export const Home = () => {
             </div>
             <AboutMe />
             <Technologies />
+            {process.env.BLOG_ENABLED && <LatestsBlogPost latestsBlogPost={latestsBlogPost} />}
             <Socials />
         </>
     );

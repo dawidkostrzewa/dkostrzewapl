@@ -1,5 +1,15 @@
+import { BlogFields } from '../components/Blog/Blog.types';
 import { Home } from '../components/Home';
+import { client } from '../contentful/client';
 
-export default function HomePage() {
-    return <Home />;
+const getLatestsBlogPost = async () => {
+    const res = await client.getEntries<BlogFields>({
+        content_type: 'blogPost'
+    });
+    return res.items[0];
+};
+
+export default async function HomePage() {
+    const latestsBlogPost = await getLatestsBlogPost();
+    return <Home latestsBlogPost={latestsBlogPost} />;
 }
