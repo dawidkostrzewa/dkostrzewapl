@@ -11,7 +11,7 @@ import { Entry } from 'contentful';
 export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
     const { fields } = entry;
     return (
-        <section className="w-7/12 mx-auto">
+        <section className="mx-auto">
             <article>
                 <Image
                     alt={fields.title}
@@ -20,15 +20,16 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
                     height={400}
                     className="mx-auto mb-12"
                 />
-                <h1 className={`font-bold text-5xl text-center mb-5 ${styles.title}`}>{`${fields.title}`}</h1>
-                <div className="flex justify-around">
+                <h1
+                    className={`font-bold text-5xl max-w-7xl mx-auto text-center mb-5 ${styles.title}`}>{`${fields.title}`}</h1>
+                <div className="flex justify-around max-w-6xl mx-auto">
                     <div className="flex items-center">
                         <AiFillCalendar size={20} />
                         <span className="ml-2">{dayjs(entry.sys.createdAt).format('DD MMMM YYYY')}</span>
                     </div>
                     <ReadTime text={fields.post} />
                 </div>
-                <div className="mt-12 max-w-4xl mx-auto text-lg">
+                <div className="mt-12 max-w-6xl mx-auto text-lg">
                     <ReactMarkdown
                         components={{
                             code(codeProps) {
