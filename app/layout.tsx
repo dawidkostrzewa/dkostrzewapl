@@ -8,9 +8,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html className="dark h-full" lang="en">
             <body className="min-h-full">
                 <div className="bg-white dark:bg-black dark:text-white min-h-screen">
-                    <header>
-                        <Navbar />
-                    </header>
+                    <Navbar />
                     <main className="px-8 mt-20">{children}</main>
                     <Footer />
                     <GAScript />
