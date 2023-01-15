@@ -4,8 +4,12 @@ import { BlogFields } from '../Blog.types';
 import { CodeBlock } from '../CodeBlock/CodeBlock';
 import styles from './SingleBlogPost.module.scss';
 import { ReadTime } from '../ReadTime/ReadTime';
+import { AiFillCalendar } from 'react-icons/ai';
+import dayjs from 'dayjs';
+import { Entry } from 'contentful';
 
-export const SingleBlogPost = (fields: BlogFields) => {
+export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
+    const { fields } = entry;
     return (
         <section className="w-7/12 mx-auto">
             <article>
@@ -17,7 +21,11 @@ export const SingleBlogPost = (fields: BlogFields) => {
                     className="mx-auto mb-12"
                 />
                 <h1 className={`font-bold text-5xl text-center mb-5 ${styles.title}`}>{`${fields.title}`}</h1>
-                <div>
+                <div className="flex justify-around">
+                    <div className="flex items-center">
+                        <AiFillCalendar size={20} />
+                        <span className="ml-2">{dayjs(entry.sys.createdAt).format('DD MMMM YYYY')}</span>
+                    </div>
                     <ReadTime text={fields.post} />
                 </div>
                 <div className="mt-12 max-w-4xl mx-auto text-lg">

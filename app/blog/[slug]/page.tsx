@@ -13,5 +13,5 @@ const getEntry = async (slug: string) => {
 export default async function SingleBlogPostPage({ params }: { params: { slug: string } }) {
     const post = await getEntry(params.slug);
 
-    return <SingleBlogPost {...post?.fields} />;
+    return <SingleBlogPost entry={post} />;
 }

@@ -6,6 +6,7 @@ module.exports = {
         colors: {
             black: 'rgb(29, 29, 29)',
             white: 'rgb(255, 255, 255)',
+            lightBlack: '#292929'
         },
         fontFamily: {
             sans: ['"Roboto"', 'sans-serif']
