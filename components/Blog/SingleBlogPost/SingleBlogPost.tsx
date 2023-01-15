@@ -16,8 +16,8 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
                 <Image
                     alt={fields.title}
                     src={'https:' + fields.thumbnail.fields.file.url}
-                    width={800}
-                    height={400}
+                    width={1000}
+                    height={600}
                     className="mx-auto mb-12"
                 />
                 <h1
@@ -40,14 +40,14 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
                                     <code
                                         className={codeProps.className}
                                         // TODO: proper styling for inline code
-                                        style={{ background: '#63666A', fontStyle: 'italic', padding: '3px' }}
+                                        style={{ background: '#63666A', fontStyle: 'italic', padding: '1px 4px' }}
                                         {...codeProps}>
                                         {codeProps.children}
                                     </code>
                                 );
                             },
                             p(pProps) {
-                                return <p className="mb-5" {...pProps} />;
+                                return <div className="mb-5" {...pProps} />;
                             }
                         }}>
                         {fields.post}

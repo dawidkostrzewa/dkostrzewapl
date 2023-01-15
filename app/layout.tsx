@@ -1,7 +1,7 @@
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import '../styles/globals.css';
-import Script from 'next/script';
+import { GAScript } from '../components/GAScript/GAScript';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -13,6 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     </header>
                     <main className="px-8 mt-20">{children}</main>
                     <Footer />
+                    <GAScript />
                 </div>
             </body>
         </html>

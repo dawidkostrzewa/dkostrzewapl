@@ -10,8 +10,12 @@ module.exports = {
         },
         fontFamily: {
             sans: ['"Roboto"', 'sans-serif']
+        },
+        extend: {
+            scale: {
+                102: '1.02'
+            }
         }
-        // extend: {}
     },
     plugins: []
 };
