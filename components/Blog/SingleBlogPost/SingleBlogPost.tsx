@@ -3,12 +3,9 @@ import Image from 'next/image';
 import { BlogFields } from '../Blog.types';
 import { CodeBlock } from '../CodeBlock/CodeBlock';
 import styles from './SingleBlogPost.module.scss';
-import readingTime from 'reading-time';
-import { BsBook } from 'react-icons/bs';
+import { ReadTime } from '../ReadTime/ReadTime';
 
 export const SingleBlogPost = (fields: BlogFields) => {
-    const readTime = readingTime(fields.post);
-
     return (
         <section className="w-7/12 mx-auto">
             <article>
@@ -21,9 +18,7 @@ export const SingleBlogPost = (fields: BlogFields) => {
                 />
                 <h1 className={`font-bold text-5xl text-center mb-5 ${styles.title}`}>{`${fields.title}`}</h1>
                 <div>
-                    <div className="flex items-center justify-center">
-                        <BsBook size={20} /> <span className="ml-2">{readTime.text}</span>
-                    </div>
+                    <ReadTime text={fields.post} />
                 </div>
                 <div className="mt-12 max-w-4xl mx-auto text-lg">
                     <ReactMarkdown
