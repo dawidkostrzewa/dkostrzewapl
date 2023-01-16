@@ -6,4 +6,5 @@ export type BlogFields = {
     thumbnail: Asset;
     post: EntryFields.Text;
     excerpt: EntryFields.Text;
+    isPublished: EntryFields.Boolean;
 };

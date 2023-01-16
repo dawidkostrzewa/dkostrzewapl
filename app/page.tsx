@@ -6,7 +6,7 @@ const getLatestsBlogPost = async () => {
     const res = await client.getEntries<BlogFields>({
         content_type: 'blogPost'
     });
-    return res.items[0];
+    return res.items.filter((i) => i.fields.isPublished)[0];
 };
 
 export default async function HomePage() {

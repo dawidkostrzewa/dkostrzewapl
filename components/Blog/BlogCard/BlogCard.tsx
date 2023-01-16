@@ -31,7 +31,7 @@ export const BlogCard = ({ entry, isOnMainPage }: BlogCardProps) => {
 
                 <div className="p-5">
                     <h2 className="text-white font-bold text-center text-2xl tracking-tight mb-12">
-                        {entry.fields.title}
+                        {!entry.fields.isPublished && '[DRAFT]'} {entry.fields.title}
                     </h2>
                     <div className="flex items-center justify-between">
                         <div className="flex items-center">
