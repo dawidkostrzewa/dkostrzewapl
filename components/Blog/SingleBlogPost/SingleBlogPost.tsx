@@ -7,6 +7,7 @@ import { ReadTime } from '../ReadTime/ReadTime';
 import { AiFillCalendar } from 'react-icons/ai';
 import dayjs from 'dayjs';
 import { Entry } from 'contentful';
+import clsx from 'clsx';
 
 export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
     const { fields } = entry;
@@ -38,7 +39,7 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
                                     <CodeBlock children={codeProps.children} />
                                 ) : (
                                     <code
-                                        className={codeProps.className}
+                                        className={clsx(codeProps.className, styles['code-block'])}
                                         // TODO: proper styling for inline code
                                         style={{ background: '#63666A', fontStyle: 'italic', padding: '1px 4px' }}
                                         {...codeProps}>

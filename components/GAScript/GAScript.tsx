@@ -1,6 +1,8 @@
 import Script from 'next/script';
 
 export const GAScript = () => {
+    if (process.env.NODE_ENV === 'development') return <></>;
+
     return (
         <>
             <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=UA-173012167-1`} />
