@@ -1,6 +1,6 @@
-import { BlogFields } from '../components/Blog/Blog.types';
-import { Home } from '../components/Home';
-import { client } from '../contentful/client';
+import { BlogFields } from '../../components/Blog/Blog.types';
+import { Home } from '../../components/Home';
+import { client } from '../../contentful/client';
 
 const getLatestsBlogPost = async () => {
     const res = await client.getEntries<BlogFields>({

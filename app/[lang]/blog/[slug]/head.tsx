@@ -1,6 +1,6 @@
-import { BlogFields } from '../../../components/Blog/Blog.types';
-import { GAScript } from '../../../components/GAScript/GAScript';
-import { client } from '../../../contentful/client';
+import { BlogFields } from '../../../../components/Blog/Blog.types';
+import { GAScript } from '../../../../components/GAScript/GAScript';
+import { client } from '../../../../contentful/client';
 
 const getEntryTitle = async (slug: string) => {
     const res = await client.getEntries<BlogFields>({

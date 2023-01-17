@@ -1,7 +1,7 @@
-import Footer from '../components/Footer/Footer';
-import Navbar from '../components/Navbar/Navbar';
-import '../styles/globals.css';
-import { GAScript } from '../components/GAScript/GAScript';
+import Footer from '../../components/Footer/Footer';
+import { GAScript } from '../../components/GAScript/GAScript';
+import Navbar from '../../components/Navbar/Navbar';
+import '../../styles/globals.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
