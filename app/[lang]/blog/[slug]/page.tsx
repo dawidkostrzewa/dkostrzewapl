@@ -19,16 +19,5 @@ const getEntry = async (slug: string, lang: Locale) => {
 
 export default async function SingleBlogPostPage({ params }: { params: { slug: string; lang: Locale } }) {
     const post = await getEntry(params.slug, params.lang);
-    // console.log('post', post);
-
     return <SingleBlogPost entry={post} />;
 }
-
-// export async function generateStaticParams() {
-//     const posts = await getPosts();
-
-//     return posts.map((post) => ({
-//       slug: post.slug,
-//     }));
-
-//   }

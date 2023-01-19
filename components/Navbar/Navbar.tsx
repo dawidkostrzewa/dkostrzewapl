@@ -1,40 +1,28 @@
-'use client';
-
-import { i18n } from 'i18n-config';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
+import { LocalizedLink, useLocale } from 'next-intl';
 
 const Navbar = () => {
-    const pathName = usePathname();
-
-    const redirectedPathName = (locale: string) => {
-        if (!pathName) return '/';
-        const segments = pathName.split('/');
-        segments[1] = locale;
-        return segments.join('/');
-    };
-
-    const isOnBlogPage = pathName?.includes('/blog/');
+    const locale = useLocale();
 
     return (
         <nav className="mx-5 py-5 flex justify-between">
             <div>
                 <ul>
-                    {!isOnBlogPage &&
-                        i18n.locales.map((locale) => {
-                            return (
-                                <li key={locale}>
-                                    <Link href={redirectedPathName(locale)}>{locale}</Link>
-                                </li>
-                            );
-                        })}
+                    <LocalizedLink href="/" locale="pl" className={clsx({ underline: locale === 'pl' })}>
+                        PL
+                    </LocalizedLink>
+                    <LocalizedLink href="/" locale="en" className={clsx({ underline: locale === 'en' })}>
+                        EN
+                    </LocalizedLink>
                 </ul>
             </div>
             <div>
-                <Link className="mr-2" href="/">
+                <LocalizedLink className="mr-2" href="/" locale={locale}>
                     Home
-                </Link>
-                <Link href="/blog">Blog</Link>
+                </LocalizedLink>
+                <LocalizedLink href="/blog" locale={locale}>
+                    Blog
+                </LocalizedLink>
             </div>
         </nav>
     );

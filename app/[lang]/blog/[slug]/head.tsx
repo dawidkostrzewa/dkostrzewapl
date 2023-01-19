@@ -2,18 +2,18 @@ import { BlogFields } from '../../../../components/Blog/Blog.types';
 import { GAScript } from '../../../../components/GAScript/GAScript';
 import { client } from '../../../../contentful/client';
 
-const getEntryTitle = async (slug: string) => {
-    console.log(slug);
+const getEntryTitle = async (slug: string, lang: 'pl' | 'en') => {
     const res = await client.getEntries<BlogFields>({
         content_type: 'blogPost',
-        'fields.slug': slug
+        'fields.slug': slug,
+        locale: lang === 'pl' ? 'pl-PL' : 'en-US'
     });
 
-    return res.items[0]?.fields || { title: '', excerpt: '' };
+    return res.items[0]?.fields;
 };
 
-export default async function Head({ params }: { params: { slug: string } }) {
-    const { title, excerpt } = await getEntryTitle(params.slug);
+export default async function Head({ params }: { params: { slug: string; lang: 'pl' | 'en' } }) {
+    const { title, excerpt } = await getEntryTitle(params.slug, params.lang);
     return (
         <>
             <meta name="viewport" content="width=device-width, initial-scale=1" />

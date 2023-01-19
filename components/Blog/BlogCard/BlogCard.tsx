@@ -5,10 +5,13 @@ import clsx from 'clsx';
 import { ReadTime } from '../ReadTime/ReadTime';
 import dayjs from 'dayjs';
 import { AiFillCalendar } from 'react-icons/ai';
+import { LocalizedLink, useLocale } from 'next-intl';
 
 export const BlogCard = ({ entry, isOnMainPage }: BlogCardProps) => {
+    const locale = useLocale();
+
     return (
-        <Link href={`/blog/${entry.fields.slug}`}>
+        <LocalizedLink href={`/blog/${entry.fields.slug}`} locale={locale}>
             <div
                 className={clsx(
                     'bg-lightBlack',
@@ -51,6 +54,6 @@ export const BlogCard = ({ entry, isOnMainPage }: BlogCardProps) => {
                 </Link> */}
                 </div>
             </div>
-        </Link>
+        </LocalizedLink>
     );
 };
