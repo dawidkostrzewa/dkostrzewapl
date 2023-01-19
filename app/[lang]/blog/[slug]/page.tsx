@@ -3,17 +3,34 @@ import { SingleBlogPost } from '../../../../components/Blog/SingleBlogPost/Singl
 import { client } from '../../../../contentful/client';
 import { Locale } from '../../../../i18n-config';
 
-const getEntry = async (slug: string) => {
+const getEntry = async (slug: string, lang: Locale) => {
+    const locale = lang === 'pl' ? 'pl-PL' : 'en-US';
+    console.log(slug);
     const res = await client.getEntries<BlogFields>({
         content_type: 'blogPost',
-        'fields.slug': slug
+        'fields.slug': slug,
+        locale: locale
     });
+
+    console.log(res.items);
+    const id = res.items[0]?.sys.id;
+    // const singlePost = await client.getEntry(id, { locale: '*' });
+
     return res.items[0];
 };
 
 export default async function SingleBlogPostPage({ params }: { params: { slug: string; lang: Locale } }) {
-    console.log(params.lang);
-    const post = await getEntry(params.slug);
+    const post = await getEntry(params.slug, params.lang);
+    // console.log('post', post);
 
     return <SingleBlogPost entry={post} />;
 }
+
+// export async function generateStaticParams() {
+//     const posts = await getPosts();
+
+//     return posts.map((post) => ({
+//       slug: post.slug,
+//     }));
+
+//   }

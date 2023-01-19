@@ -3,11 +3,13 @@ import { GAScript } from '../../../../components/GAScript/GAScript';
 import { client } from '../../../../contentful/client';
 
 const getEntryTitle = async (slug: string) => {
+    console.log(slug);
     const res = await client.getEntries<BlogFields>({
         content_type: 'blogPost',
         'fields.slug': slug
     });
-    return res.items[0].fields;
+
+    return res.items[0]?.fields || { title: '', excerpt: '' };
 };
 
 export default async function Head({ params }: { params: { slug: string } }) {

@@ -5,11 +5,11 @@ import { Locale } from 'i18n-config';
 
 //
 const getContentful = async (lang: Locale) => {
-    console.log(lang);
     const locale = lang === 'pl' ? 'pl-PL' : 'en-US';
 
     const res = await client.getEntries<BlogFields>({ content_type: 'blogPost', locale: locale });
-    return res.items;
+    const filtered = res.items.filter((i) => !!i.fields.title);
+    return filtered;
 };
 
 export default async function BlogPage({ params }: { params: { lang: Locale } }) {

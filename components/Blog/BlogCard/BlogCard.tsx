@@ -21,13 +21,15 @@ export const BlogCard = ({ entry, isOnMainPage }: BlogCardProps) => {
                     'md:mx-0',
                     'hover:scale-102 transition-all'
                 )}>
-                <Image
-                    alt={entry.fields.title}
-                    src={'https:' + entry.fields.thumbnail.fields.file.url}
-                    width={1280}
-                    height={720}
-                    className="rounded-t-lg "
-                />
+                {entry.fields.thumbnail?.fields?.file?.url && (
+                    <Image
+                        alt={entry.fields.title}
+                        src={'https:' + entry.fields.thumbnail?.fields?.file?.url}
+                        width={1280}
+                        height={720}
+                        className="rounded-t-lg "
+                    />
+                )}
 
                 <div className="p-5">
                     <h2 className="text-white font-bold text-center text-2xl tracking-tight mb-12">
@@ -36,7 +38,7 @@ export const BlogCard = ({ entry, isOnMainPage }: BlogCardProps) => {
                     <div className="flex items-center justify-between">
                         <div className="flex items-center">
                             <AiFillCalendar size={20} />
-                            <span className="ml-2">{dayjs(entry.sys.createdAt).format('DD MMMM YYYY')}</span>
+                            <span className="ml-2">{dayjs(entry?.sys?.createdAt).format('DD MMMM YYYY')}</span>
                         </div>
                         <ReadTime text={entry.fields.post} />
                     </div>

@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
     const pathName = usePathname();
+
     const redirectedPathName = (locale: string) => {
         if (!pathName) return '/';
         const segments = pathName.split('/');
@@ -13,17 +14,20 @@ const Navbar = () => {
         return segments.join('/');
     };
 
+    const isOnBlogPage = pathName?.includes('/blog/');
+
     return (
         <nav className="mx-5 py-5 flex justify-between">
             <div>
                 <ul>
-                    {i18n.locales.map((locale) => {
-                        return (
-                            <li key={locale}>
-                                <Link href={redirectedPathName(locale)}>{locale}</Link>
-                            </li>
-                        );
-                    })}
+                    {!isOnBlogPage &&
+                        i18n.locales.map((locale) => {
+                            return (
+                                <li key={locale}>
+                                    <Link href={redirectedPathName(locale)}>{locale}</Link>
+                                </li>
+                            );
+                        })}
                 </ul>
             </div>
             <div>

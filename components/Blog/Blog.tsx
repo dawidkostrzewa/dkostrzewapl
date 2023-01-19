@@ -18,7 +18,7 @@ export const Blog = ({ entries }: BlogProps) => {
             <h1 className="text-6xl font-bold text-center mb-20">Blog</h1>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 xl:max-w-7xl mx-auto mt-20">
                 {publishedEntries.map((entry) => {
-                    return <BlogCard key={entry.sys.id} entry={entry} />;
+                    return <BlogCard key={entry?.sys?.id} entry={entry} />;
                 })}
             </div>
         </section>
