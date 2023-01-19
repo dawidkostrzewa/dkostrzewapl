@@ -7,14 +7,12 @@ const Navbar = () => {
     return (
         <nav className="mx-5 py-5 flex justify-between">
             <div>
-                <ul>
-                    <LocalizedLink href="/" locale="pl" className={clsx({ underline: locale === 'pl' })}>
-                        PL
-                    </LocalizedLink>
-                    <LocalizedLink href="/" locale="en" className={clsx({ underline: locale === 'en' })}>
-                        EN
-                    </LocalizedLink>
-                </ul>
+                <LocalizedLink href="/" locale="pl" className={clsx({ 'font-bold': locale === 'pl' }, 'mr-2')}>
+                    PL
+                </LocalizedLink>
+                <LocalizedLink href="/" locale="en" className={clsx({ 'font-bold': locale === 'en' })}>
+                    EN
+                </LocalizedLink>
             </div>
             <div>
                 <LocalizedLink className="mr-2" href="/" locale={locale}>
