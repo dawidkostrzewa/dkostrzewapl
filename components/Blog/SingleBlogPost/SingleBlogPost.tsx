@@ -10,7 +10,10 @@ import { Entry } from 'contentful';
 import clsx from 'clsx';
 
 export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
-    const { fields } = entry;
+    const fields = entry?.fields;
+
+    if (!fields) return <section></section>;
+
     return (
         <section className="mx-auto">
             <article>

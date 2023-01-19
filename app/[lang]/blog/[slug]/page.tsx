@@ -5,14 +5,12 @@ import { Locale } from '../../../../i18n-config';
 
 const getEntry = async (slug: string, lang: Locale) => {
     const locale = lang === 'pl' ? 'pl-PL' : 'en-US';
-    console.log(slug);
     const res = await client.getEntries<BlogFields>({
         content_type: 'blogPost',
         'fields.slug': slug,
         locale: locale
     });
 
-    console.log(res.items);
     const id = res.items[0]?.sys.id;
     // const singlePost = await client.getEntry(id, { locale: '*' });
 
