@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { ReadTime } from '../ReadTime/ReadTime';
 import dayjs from 'dayjs';
 import { AiFillCalendar } from 'react-icons/ai';
-import { LocalizedLink, useLocale } from 'next-intl';
+import { LocalizedLink, useLocale, useTranslations } from 'next-intl';
 
 export const BlogCard = ({ entry, isOnMainPage }: BlogCardProps) => {
     const locale = useLocale();
@@ -41,7 +41,7 @@ export const BlogCard = ({ entry, isOnMainPage }: BlogCardProps) => {
                     <div className="flex items-center justify-between">
                         <div className="flex items-center">
                             <AiFillCalendar size={20} />
-                            <span className="ml-2">{dayjs(entry?.sys?.createdAt).format('DD MMMM YYYY')}</span>
+                            <span className="ml-2">{dayjs(entry?.sys?.createdAt).format('DD/MM/YYYY')}</span>
                         </div>
                         <ReadTime text={entry.fields.post} />
                     </div>

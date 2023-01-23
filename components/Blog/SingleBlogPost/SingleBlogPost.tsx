@@ -31,7 +31,7 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
                 <div className="flex justify-around max-w-6xl mx-auto">
                     <div className="flex items-center">
                         <AiFillCalendar size={20} />
-                        <span className="ml-2">{dayjs(entry?.sys?.createdAt).format('DD MMMM YYYY')}</span>
+                        <span className="ml-2">{dayjs(entry?.sys?.createdAt).format('DD/MM/YYYY')}</span>
                     </div>
                     <ReadTime text={fields.post} />
                 </div>
@@ -45,7 +45,6 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
                                 ) : (
                                     <code
                                         className={clsx(codeProps.className, styles['code-block'])}
-                                        // TODO: proper styling for inline code
                                         style={{ background: '#63666A', fontStyle: 'italic', padding: '1px 4px' }}
                                         {...codeProps}>
                                         {codeProps.children}
@@ -54,6 +53,9 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
                             },
                             p(pProps) {
                                 return <div className="mb-5" {...pProps} />;
+                            },
+                            h2(h2Props) {
+                                return <h2 className="text-2xl py-2 font-bold" {...h2Props} />;
                             }
                         }}>
                         {fields.post}
