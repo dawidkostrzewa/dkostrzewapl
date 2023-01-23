@@ -1,10 +1,12 @@
+import { useTranslations } from 'next-intl';
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import styles from './Socials.module.scss';
 
 export const Socials = () => {
+    const t = useTranslations();
     return (
         <div className="mr-auto ml-auto lg:mt-32 min-[320px]:mt-8 max-w-3xl text-justify">
-            <h2 className={`text-2xl font-bold ${styles['title']}`}>Socials</h2>
+            <h2 className={`text-2xl font-bold ${styles['title']}`}>{t('home.socials')}</h2>
             <div className="mt-6 flex justify-around">
                 <a
                     href="http://twitter.com/kosDawid"

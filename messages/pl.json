@@ -1,5 +1,8 @@
 {
-    "Index": {
-        "title": "Witaj swiecei"
+    "home": {
+        "about": "O mnie",
+        "technologies": "Technologie",
+        "recentlyOnBlog": "Ostatnio na blogu",
+        "socials": "Sociale"
     }
 }

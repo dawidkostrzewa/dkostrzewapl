@@ -1,14 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import styles from './AboutMe.module.scss';
 
 const AboutMe = () => {
     const startedCodingYear = 2013;
     const yearsFromStartedCoding = new Date().getFullYear() - startedCodingYear;
+    const t = useTranslations();
 
     return (
         <div className="mr-auto ml-auto lg:mt-32 sm:mt-8 max-w-3xl text-justify">
-            <h2 className={`text-2xl font-bold ${styles['title']}`}>About Me</h2>
+            <h2 className={`text-2xl font-bold ${styles['title']}`}>{t('home.about')}</h2>
             <div className="my-4 text-lg">
                 I am a software engineer based in Kraków, Poland. I am working on web applications including the newest
                 frameworks and libraries such as Reach, Angular, TypeScript, NodeJS.&nbsp;I&nbsp;like to learn new
@@ -47,8 +49,7 @@ const AboutMe = () => {
                 , etc.
             </div>
             <div className="my-4 text-lg">
-                In addition to programming, I like to go jogging, bike, go hiking, watch a good series on Netflix, drink
-                a tasty beer.
+                In addition to programming, I like to go jogging, bike, go hiking, watch a good series on Netflix
             </div>
         </div>
     );

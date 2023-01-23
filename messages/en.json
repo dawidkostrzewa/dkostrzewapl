@@ -1,5 +1,8 @@
 {
-    "Index": {
-        "title": "Hello world!"
+    "home": {
+        "about": "About me",
+        "technologies": "Techologies",
+        "recentlyOnBlog": "Recently on the blog",
+        "socials": "Socials"
     }
 }

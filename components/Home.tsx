@@ -6,8 +6,11 @@ import { Socials } from './Socials/Socials';
 import { LatestsBlogPost } from './LatestsBlogPost/LatestsBlogPost';
 import { Entry } from 'contentful';
 import { BlogFields } from './Blog/Blog.types';
+import { useLocale } from 'next-intl';
+import AboutMePL from './AboutMe/AboutMePL';
 
 export const Home = ({ latestsBlogPost }: { latestsBlogPost: Entry<BlogFields> }) => {
+    const locale = useLocale();
     return (
         <>
             <div className="flex flex-col justify-center items-center text-center">
@@ -20,7 +23,7 @@ export const Home = ({ latestsBlogPost }: { latestsBlogPost: Entry<BlogFields> }
                     <IntroAnimation />
                 </div>
             </div>
-            <AboutMe />
+            {locale === 'pl' ? <AboutMePL /> : <AboutMe />}
             <Technologies />
             {process.env.BLOG_ENABLED && <LatestsBlogPost latestsBlogPost={latestsBlogPost} />}
             <Socials />
