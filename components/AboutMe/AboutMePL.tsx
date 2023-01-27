@@ -13,12 +13,12 @@ const AboutMePL = () => {
             <h2 className={`text-2xl font-bold ${styles['title']}`}>{t('home.about')}</h2>
             <div className="my-4 text-lg">
                 Jestem Frontend Developerem z Krakowa. Pracuje nad aplikacjami webowymi w frameworkach i narzędziach
-                tj.: React, Angular, TypeScript, Node.
+                React, Angular, TypeScript, Node.
             </div>
             <div className="my-4 text-lg">
-                Zacząłem kodować {yearsFromStartedCoding} lat temu i dalej jestem w tym zakochany. W swoim życiu miałem
-                możliwość spróbowania wielu dziedzin programowania, zaczynając od niskopoziomowego assemblera i C++.
-                Miałem również możliwość nauki tworzenia aplikacji na Androida w Javie i iOS w Swift, a także aplikacji
+                Zacząłem kodować {yearsFromStartedCoding} lat temu i dalej to uwielbiam. W swoim życiu miałem możliwość
+                spróbowania wielu dziedzin programowania, zaczynając od niskopoziomowego assemblera i C++. Miałem
+                również możliwość nauki tworzenia aplikacji na Androida w Javie i iOS w Swift, a także aplikacji
                 desktopowych w C# WPF. Pracowałem również nad wieloma projektami z obszaru web developmentu, gdzie
                 akutalnie się rozwijam. Dotknięcie tak wielu obszarów było możliwe dzięki temu, że ukonczyłem technikum
                 informatyczne i Informatykę Stosowaną na AGH.
@@ -48,8 +48,8 @@ const AboutMePL = () => {
                 , itp.
             </div>
             <div className="my-4 text-lg">
-                Po za programowaniem lubię pójśc pobiegać, pojeżdzić na rowerze, wyjść w góry i oglądnąć dobry film na
-                Netflix lub popracować nad jakimś side projektem.
+                Po za programowaniem lubię biegać, pojeżdzić na rowerze, wyjść w góry, oglądnąć dobry film na Netflix
+                lub popracować nad jakimś side projektem.
             </div>
         </div>
     );
