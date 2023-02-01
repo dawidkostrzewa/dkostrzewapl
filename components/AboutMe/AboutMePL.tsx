@@ -26,8 +26,8 @@ const AboutMePL = () => {
             <div className="my-4 text-lg">
                 Aktualnie skupiam się w 100% na aplikacjach webowych i ecosystemie JS. W mojej karierze programisty
                 pracowałem komercyjnie z Wordpressem a następnie zacząłem tworzyć aplikacje w React, TypeScript i
-                NextJS. Przez chwile również pracowałem z Angularem +10, spróbowałem trochę trochę backendu w NodeJS i
-                devopsa w Azure DevOps.
+                NextJS. Przez chwile również pracowałem z Angularem +10, spróbowałem trochę backendu w NodeJS i devopsa
+                w Azure DevOps.
             </div>
             <div className="my-4 text-lg">
                 Staram się być na bieżąco z tym co dzieje się w świecie web devu, dlatego słucham podcastów takich jak{' '}
