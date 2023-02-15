@@ -8,6 +8,7 @@ import { AiFillCalendar } from 'react-icons/ai';
 import dayjs from 'dayjs';
 import { Entry } from 'contentful';
 import clsx from 'clsx';
+import ScrollUp from 'components/ScrollUp/ScrollUp';
 
 export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
     const fields = entry?.fields;
@@ -16,6 +17,7 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
 
     return (
         <section className="mx-auto">
+            <ScrollUp />
             <article>
                 {fields.thumbnail?.fields?.file?.url && (
                     <Image
