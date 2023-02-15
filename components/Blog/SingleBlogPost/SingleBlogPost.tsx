@@ -21,7 +21,7 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
             <article>
                 {fields.thumbnail?.fields?.file?.url && (
                     <Image
-                        alt={fields.title}
+                        alt={fields?.title}
                         src={'https:' + fields.thumbnail.fields.file.url}
                         width={1000}
                         height={600}
@@ -29,7 +29,7 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
                     />
                 )}
                 <h1
-                    className={`font-bold text-5xl max-w-7xl mx-auto text-center mb-5 ${styles.title}`}>{`${fields.title}`}</h1>
+                    className={`font-bold text-5xl max-w-7xl mx-auto text-center mb-5 ${styles.title}`}>{`${fields?.title}`}</h1>
                 <div className="flex justify-around max-w-6xl mx-auto">
                     <div className="flex items-center">
                         <AiFillCalendar size={20} />

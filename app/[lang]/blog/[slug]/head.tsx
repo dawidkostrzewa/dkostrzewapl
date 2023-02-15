@@ -13,12 +13,12 @@ const getEntryTitle = async (slug: string, lang: 'pl' | 'en') => {
 };
 
 export default async function Head({ params }: { params: { slug: string; lang: 'pl' | 'en' } }) {
-    const { title, excerpt } = await getEntryTitle(params.slug, params.lang);
+    const data = await getEntryTitle(params.slug, params.lang);
     return (
         <>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="description" content={excerpt} />
-            <title>{`${title} | Dawid Kostrzewa - Software Engineer`}</title>
+            <meta name="description" content={data?.excerpt} />
+            <title>{`${data?.title} | Dawid Kostrzewa - Software Engineer`}</title>
 
             <link rel="icon" href="/favicon.ico" />
             <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
