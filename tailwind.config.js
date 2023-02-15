@@ -9,7 +9,7 @@ module.exports = {
             lightBlack: '#292929'
         },
         fontFamily: {
-            sans: ['"Roboto"', 'sans-serif']
+            sans: ['"Open Sans"', 'sans-serif']
         },
         extend: {
             scale: {

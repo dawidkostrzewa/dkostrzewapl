@@ -57,7 +57,7 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
                                 return <div className="mb-5" {...pProps} />;
                             },
                             h2(h2Props) {
-                                return <h2 className="text-2xl py-2 font-bold" {...h2Props} />;
+                                return <h2 className="text-2xl mt-10 mb-2 font-bold" {...h2Props} />;
                             }
                         }}>
                         {fields.post}
