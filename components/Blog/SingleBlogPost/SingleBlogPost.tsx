@@ -57,10 +57,22 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
                                 return <div className="mb-5" {...pProps} />;
                             },
                             h2(h2Props) {
-                                return <h2 className="text-2xl mt-10 mb-2 font-bold" {...h2Props} />;
+                                return <h2 className="text-4xl mt-12 mb-3 font-bold" {...h2Props} />;
                             },
                             a(aProps) {
                                 return <a {...aProps} className="underline underline-offset-1" />;
+                            },
+                            img(imgProps) {
+                                return (
+                                    <Image
+                                        src={'https:' + imgProps.src}
+                                        width="0"
+                                        height="0"
+                                        sizes="100vw"
+                                        className="w-9/12 mx-auto"
+                                        alt={imgProps.alt!}
+                                    />
+                                );
                             }
                         }}>
                         {fields.post}
