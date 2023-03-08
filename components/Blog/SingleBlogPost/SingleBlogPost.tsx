@@ -58,6 +58,9 @@ export const SingleBlogPost = ({ entry }: { entry: Entry<BlogFields> }) => {
                             },
                             h2(h2Props) {
                                 return <h2 className="text-2xl mt-10 mb-2 font-bold" {...h2Props} />;
+                            },
+                            a(aProps) {
+                                return <a {...aProps} className="underline underline-offset-1" />;
                             }
                         }}>
                         {fields.post}
